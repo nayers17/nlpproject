@@ -1,0 +1,18 @@
+eval_loss:
+0.2312: A low evaluation loss indicates that the model is performing well on the test dataset.
+
+eval_accuracy:
+0.9132 (~91.3%): Excellent accuracy, showing that the model correctly classifies most of the test samples.
+
+eval_f1:
+0.9181 (~91.8%): A strong F1-score, which balances precision and recall, is particularly good for imbalanced datasets.
+
+eval_precision:
+0.9067 (~90.7%): High precision indicates that most of the predicted positive classes are indeed correct.
+
+eval_recall:
+0.9296 (~92.9%): High recall shows that the model is identifying most of the true positive samples.
+
+Other Metrics:
+eval_runtime: 1.2 seconds is a fast evaluation.
+eval_steps_per_second: 39.12 steps/sec indicates efficient computation.
