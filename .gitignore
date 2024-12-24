@@ -1,23 +1,18 @@
 # Virtual environment
 venv/
 
-# Checkpoints and model files
+# Large files
 results/
+finetuned_distilbert/
 *.safetensors
 *.bin
+*.pt
 *.pth
-checkpoint-*/
 
 # Cached files
 __pycache__/
 *.py[cod]
 *.log
-
-# Tokenizer and model data
-finetuned_distilbert/special_tokens_map.json
-finetuned_distilbert/tokenizer_config.json
-finetuned_distilbert/training_args.bin
-finetuned_distilbert/vocab.txt
 
 # Environment files
 .env
