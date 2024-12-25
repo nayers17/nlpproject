@@ -32,7 +32,13 @@ if __name__ == "__main__":
         "I had a terrible experience, the staff was rude, and the food was cold.",
         "The product works as expected, no complaints.",
         "Worst purchase ever. It broke within a day.",
-        "Absolutely loved it! Highly recommend."
+        "Absolutely loved it! Highly recommend.",
+        "The food was okay, nothing special.",
+        "The product was delivered on time, but the quality was not great.",
+        "Some aspects were good, but overall it was disappointing.",
+        "The staff spoke with an accent, but the service was good.",
+        "The waiter was a woman, and the food was satisfactory."
+
     ]
 
     # Predict sentiments

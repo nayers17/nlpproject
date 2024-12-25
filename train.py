@@ -24,10 +24,10 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained("./finetuned_distilbert")
 
-    # Load a small subset for quick demonstration
+    # Load a small subset of the Yelp Polarity dataset (10%)
     dataset = load_dataset("yelp_polarity", split={
-        "train": "train[:1%]", 
-        "test": "test[:1%]"
+        "train": "train[:10%]", 
+        "test": "test[:10%]"
     })
 
     # Tokenize data
@@ -41,13 +41,14 @@ def main():
     # Training configuration
     training_args = TrainingArguments(
         output_dir="./results",
-        eval_strategy="epoch",
-        per_device_train_batch_size=8,
-        per_device_eval_batch_size=8,
-        num_train_epochs=1,  # increase to 3+ for better results
+        evaluation_strategy="epoch",
+        save_strategy="epoch",             # <-- Add this line to match evaluation_strategy
+        per_device_train_batch_size=16,
+        per_device_eval_batch_size=16,
+        num_train_epochs=4,  
         logging_steps=10,
         report_to="none",
-        load_best_model_at_end=False
+        load_best_model_at_end=True
     )
 
     trainer = Trainer(
@@ -59,17 +60,16 @@ def main():
     )
 
     # Train
-    # trainer.train()
+    trainer.train()
 
     # Save final model
     trainer.save_model("./finetuned_distilbert")
     tokenizer.save_pretrained("./finetuned_distilbert")
 
+    # Evaluate
     evaluation_results = trainer.evaluate()
     print(evaluation_results)
 
 if __name__ == "__main__":
-    # Ensure we run on GPU if available (e.g., your L40)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     main()
-
