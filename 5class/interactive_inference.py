@@ -24,7 +24,7 @@ def get_prediction(model, tokenizer, text):
 
 def main():
     # Path to your fine-tuned model folder (which has config.json, pytorch_model.bin, etc.)
-    model_path = "./5class/results-distilbert/final"
+    model_path = "./5class/results-distilbert-continue/final"
 
     # Load tokenizer & model
     tokenizer = AutoTokenizer.from_pretrained(model_path)

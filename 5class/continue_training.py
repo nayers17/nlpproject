@@ -63,10 +63,10 @@ def main():
         output_dir="./5class/results-distilbert-continue",  # new output folder
         eval_strategy="epoch",
         save_strategy="epoch",
-        num_train_epochs=2,
+        num_train_epochs=5,
         per_device_train_batch_size=16,
         per_device_eval_batch_size=16,
-        learning_rate=3e-5,      # same LR as before (adjust if you like)
+        learning_rate=2e-5,      # same LR as before (adjust if you like)
         weight_decay=0.01,
         warmup_ratio=0.1,
         fp16=True,               # if your GPU supports mixed precision

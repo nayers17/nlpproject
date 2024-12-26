@@ -4,3 +4,5 @@ numpy
 scikit-learn
 datasets
 accelerate
+shap
+matplotlib
